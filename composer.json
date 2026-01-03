@@ -1,0 +1,70 @@
+{
+    "name": "ecolabor/laravel-swiss-uid-search",
+    "description": "Laravel package for integrating the Swiss UID (Unternehmens-Identifikationsnummer) webservice from the Federal Statistical Office (BFS)",
+    "keywords": [
+        "laravel",
+        "swiss",
+        "uid",
+        "switzerland",
+        "company",
+        "enterprise",
+        "identification",
+        "bfs",
+        "search"
+    ],
+    "homepage": "https://github.com/ecolabor/laravel-swiss-uid-search",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ecolabor GmbH",
+            "email": "info@ecolabor.ch",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0|^12.0",
+        "spatie/laravel-package-tools": "^1.16",
+        "ext-soap": "*"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^8.0",
+        "orchestra/testbench": "^9.0|^10.0",
+        "pestphp/pest": "^3.0",
+        "pestphp/pest-plugin-laravel": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ecolabor\\SwissUid\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ecolabor\\SwissUid\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ecolabor\\SwissUid\\SwissUidServiceProvider"
+            ],
+            "aliases": {
+                "SwissUid": "Ecolabor\\SwissUid\\Facades\\SwissUid"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
